@@ -1,0 +1,228 @@
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(bego.jpeg); 
+    padding: 20px; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto !important; /* Memastikan halaman browser bisa di-scroll ke bawah */
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: cover;
+}
+
+/* CONTAINER BACKGROUND UTAMA */
+.hero-container {
+    width: 100%;
+    max-width: 1280px; 
+    min-height: 92vh; 
+    height: auto !important;
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('bg-pemandangan.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column; /* Menyusun kartu dari atas ke bawah */
+    gap: 35px; /* Jarak vertikal pemisah antar kartu */
+    padding: 30px;
+    overflow: visible !important; /* Agar kartu di bawah tidak terpotong */
+}
+
+/* NAVBAR */
+.floating-navbar {
+    background-color: rgba(245, 247, 245, 0.95);
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin-bottom: 25px;
+    flex-shrink: 0; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-links a.active {
+    color: #2d5a27;
+}
+
+.cta-nav-btn {
+    background-color: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.cta-nav-btn:hover {
+    background-color: #1e3d1a;
+}
+
+/* ======================================================
+   KARTU GLASSMORPHISM UTAMA
+   ====================================================== */
+.about-glass-card {
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(15px);                  
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    flex-shrink: 0;
+}
+
+/* Blok Header Atas */
+.about-header-block {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.about-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: #a3c4bc;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.about-main-title {
+    font-size: 40px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* PEMBUNGKUS UTAMA (MENERAPKAN FLEX-ROW SEJAJAR DI DESKTOP) */
+.about-content-wrapper {
+    display: flex !important;
+    flex-direction: row !important; 
+    align-items: center !important; 
+    justify-content: space-between !important;
+    gap: 50px;
+    flex: 1;
+    width: 100%;
+    overflow: hidden; 
+}
+
+/* Sisi Teks Kiri */
+.about-left-text-side {
+    flex: 1.7 !important;
+    max-width: 100% !important; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    overflow-y: auto; 
+    padding-right: 20px;
+}
+
+.about-left-text-side p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+.about-left-text-side strong {
+    color: #a3c4bc;
+}
+
+/* Sisi Kanan (Tempat Foto) */
+.about-right-image-side {
+    flex: 1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* BINGKAI FOTO BULAT + BAYANGAN (DESKTOP) */
+.exact-square-box {
+    width: 320px !important;       
+    height: 320px !important;      
+    aspect-ratio: 1 / 1 !important; 
+    border-radius: 50% !important; /* Mengunci bentuk bulat di layar lebar */
+    overflow: hidden !important;   
+    border: 4px solid rgba(255, 255, 255, 0.4) !important; /* Lis putih transparan */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6) !important; /* Bayangan tebal di belakang foto */
+    flex-shrink: 0;
+    display: block !important;     
+}
+
+/* Mengatur Gambar di Dalam Bingkai */
+.exact-square-box img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Foto proporsional tidak gepeng */
+}
+
+/* DESAIN SCROLLBAR KHUSUS UNTUK AREA TEKS KARTU */
+.about-left-text-side::-webkit-scrollbar {
+    width: 5px;
+}
+.about-left-text-side::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+.about-left-text-side::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* RESPONSIVE LAYOUT (JIKA DIBUKA DI HP) */
+@media (max-width: 850px) {
+    .about-glass-card { overflow-y: auto; }
+    .about-content-wrapper { flex-direction: column-reverse !important; overflow: visible; gap: 30px; }
+    .about-left-text-side { overflow-y: visible; height: auto; padding-right: 0; }
+    .about-main-title, .about-tag { text-align: center; }
+    .about-left-text-side p { font-size: 14px; text-align: left; }
+    
+    /* Bingkai foto saat di HP */
+    .exact-square-box { 
+        width: 220px !important;  
+        height: 220px !important; 
+        border-radius: 50% !important; /* Tetap bulat di HP */
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6) !important; /* Bayangan tetap di HP */
+    }
+}

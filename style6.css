@@ -1,0 +1,310 @@
+/* ======================================================
+   RESET DASAR & BODY (FIXED SCROLLBAR DESKTOP)
+   ====================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(ars.jpg); 
+    padding: 20px; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* PERBAIKAN 1: Mengubah 'hidden' menjadi 'auto' agar halaman bisa 
+       di-scroll ke bawah saat konten organisasi bertambah panjang */
+    overflow-y: auto;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(10px); 
+}
+
+/* ======================================================
+   CONTAINER BACKGROUND UTAMA
+   ====================================================== */
+.hero-container {
+    width: 100%;
+    max-width: 1280px; 
+    min-height: 100vh; /* Menggunakan vh agar tinggi fleksibel mengikuti isi */
+    height: auto; 
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('bg-pemandangan.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    padding: 25px; 
+    padding-bottom: 60px; /* Ruang aman ekstra di bagian bawah */
+    overflow: visible; /* Diubah ke visible agar efek membesar foto tidak teriris */
+}
+
+/* ======================================================
+   NAVBAR COMPONENT
+   ====================================================== */
+.floating-navbar {
+    background-color: rgba(245, 247, 245, 0.95);
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin-bottom: 25px;
+    flex-shrink: 0; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-links a.active {
+    color: #2d5a27;
+}
+
+.cta-nav-btn {
+    background-color: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.cta-nav-btn:hover {
+    background-color: #1e3d1a;
+}
+
+/* ======================================================
+   KARTU GLASSMORPHISM UTAMA
+   ====================================================== */
+.about-glass-card {
+    flex: 1;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(15px);                  
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    
+    display: flex;
+    flex-direction: column; 
+    height: auto !important; /* PERBAIKAN 2: Memaksa card melar otomatis ke bawah mengikuti panjang teks */
+    gap: 25px;
+    min-height: 500px;
+    overflow: visible !important; /* Menghilangkan semua batasan garis potong */
+    margin-bottom: 20px;
+}
+
+/* Blok Header Atas (Judul Terkunci Permanen) */
+.about-header-block {
+    width: 100%;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.about-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: #a3c4bc;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.about-main-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* ======================================================
+   PEMBUNGKUS UTAMA (FLEX-ROW SEJAJAR)
+   ====================================================== */
+.about-content-wrapper {
+    display: center !important;
+    flex-direction: row !important; 
+    align-items: flex-start !important; /* Diubah ke start agar teks tidak ketarik ke tengah-tengah secara vertikal */
+    justify-content: space-between !important;
+    gap: 50px;
+    flex: 1;
+    width: 100%;
+    
+    /* PERBAIKAN 3: Mengubah 'hidden' menjadi 'visible' agar teks di bagian bawah tidak disembunyikan */
+    overflow: visible !important; 
+    
+    flex-wrap: wrap;
+    height: auto !important;
+    clear: both;
+    margin-top: 10px;
+}
+
+/* Sisi Teks Kiri */
+.about-left-text-side {
+    flex: 1.4 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    /* PERBAIKAN 4: Diubah menjadi auto agar tingginya dinamis mengikuti jumlah baris teks organisasi */
+    height: auto !important; 
+    overflow: visible !important; /* Menghapus fitur scrollbar internal yang merusak layout */
+    padding-right: 20px;
+}
+
+.about-left-text-side p {
+    font-size: 20px; /* Sedikit dinaikkan biar proporsional dengan layar desktop */
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.about-left-text-side strong {
+    color: #a3c4bc;
+}
+
+/* Sisi Kanan Tempat Foto Pas Foto Berada */
+.about-right-image-side {
+    flex: 0.5 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+/* BINGKAI FOTO BULAT SEMPURNA */
+.exact-square-box {
+    width: 250px !important;       
+    height: 250px !important;      
+    aspect-ratio: 1 / 1 !important; 
+    border-radius: 50% !important; 
+    overflow: hidden !important;   
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+}
+
+.exact-square-box img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 10% !important;
+}
+
+/* ======================================================
+   RESPONSIVE LAYOUT (TAMPILAN HP / JENDELA KECIL)
+   ====================================================== */
+@media (max-width: 850px) {
+    .about-glass-card { overflow-y: auto; }
+    .about-content-wrapper { flex-direction: column-reverse !important; overflow: visible; gap: 30px; }
+    .about-left-text-side { overflow-y: visible; height: auto; padding-right: 0; }
+    .about-main-title, .about-tag { text-align: center; }
+    .exact-square-box { width: 240px !important; height: 240px !important; }
+    .about-left-text-side p { font-size: 14px; text-align: left; }
+}
+/* =======================================================
+   GALERI 5 FOTO BERJEJER KESAMPING (BENTUK BULAT)
+   ======================================================= */
+
+/* Wadah luar galeri */
+.photo-gallery-container {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important; /* Jarak antar foto bulat */
+    padding: 15px 0 !important;
+    margin: 10px 0 20px 0 !important;
+    position: relative !important;
+    overflow: visible !important; /* Agar efek hover membesar tidak terpotong */
+    flex-wrap: wrap; /* Supaya responsif jika dibuka di layar HP */
+}
+
+/* Bingkai Foto Bulat Sempurna */
+.photo-item {
+    position: relative !important;
+    width: 100px !important;  /* Ukuran lebar foto bulat */
+    height: 100px !important; /* Ukuran tinggi foto bulat */
+    margin-left: 0 !important; /* Menghapus efek menumpuk */
+    border-radius: 50% !important; /* KUNCI UTAMA: Mengubah bentuk jadi bulat */
+    border: 3px solid #ffffff !important; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25) !important;
+    cursor: pointer !important;
+    overflow: hidden !important; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+    transform: none !important; /* Menghapus efek miring */
+}
+
+/* Menghapus paksaan rotasi/kemiringan dari kode lama */
+.photo-item:nth-child(1),
+.photo-item:nth-child(2),
+.photo-item:nth-child(3),
+.photo-item:nth-child(4),
+.photo-item:nth-child(5) { 
+    transform: none !important; 
+    z-index: 1 !important; 
+}
+
+/* Gambar di dalam lingkaran */
+.photo-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Efek Hover (Membesar estetik saat diarahkan kursor) */
+.photo-item:hover {
+    z-index: 10 !important;
+    transform: scale(1.2) !important; /* Membesar 20% secara proporsional */
+    border-color: #a3c4bc !important; /* Mengubah warna border saat di-hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Penyesuaian responsif untuk layar HP */
+@media (max-width: 850px) {
+    .photo-gallery-container {
+        gap: 12px !important;
+    }
+    .photo-item {
+        width: 75px !important;
+        height: 75px !important;
+    }
+}

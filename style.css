@@ -1,0 +1,203 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('arsitek.jpg'); /* Warna dasar hijau sage luar sesuai gambar */
+    padding: 30px; /* Jarak bingkai luar halaman */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+/* CONTAINER UTAMA DENGAN BACKGROUND */
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 85vh;
+    min-height: 600px;
+    position: relative;
+    border-radius: 30px; /* Sudut melengkung besar seperti di gambar 1000258734.jpg */
+    overflow: hidden;
+    
+    /* BACKGROUND IMAGE UTAMA */
+    /* Ganti 'bg-pemandangan.jpg' dengan file gambar latar belakang alam/konstruksimu */
+    background: transparent;
+    
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+/* NAVBAR MELAYANG */
+.floating-navbar {
+    background-color: rgba(245, 247, 245, 0.95); /* Warna broken white melayang */
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 50px; /* Sangat bulat melengkung ujungnya */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2d5a27; /* Hijau tua */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #2d5a27;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #333;
+    padding-right: 15px;
+    border-right: 1px solid #ccc; /* Garis pembatas tipis di navbar */
+}
+
+.cta-nav-btn {
+    background-color: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+/* HERO CONTENT (Bagi Dua: Kiri & Kanan) */
+.hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    margin-top: 20px;
+}
+
+/* SISI KIRI: TEXT */
+.hero-text-side {
+    max-width: 550px;
+    color: white;
+}
+
+.badge-tag {
+    background-color: rgba(45, 90, 39, 0.85);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.hero-text-side h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-text-side p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* TOMBOL UTAMA KIRI */
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 12px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: white;
+    color: #2d5a27;
+}
+
+/* SISI KANAN: TEMPAT FOTO PROFIL UTAMA */
+.hero-image-side {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Memojokkan ke kanan */
+    align-items: center;
+}
+
+.profile-frame {
+    width: 320px; /* Mengunci lebar frame foto agar proporsional */
+    height: 420px; /* Tinggi frame vertikal */
+    border-radius: 24px; /* Sudut halus melengkung */
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Foto otomatis penuh tanpa gepeng */
+}
+
+/* RESPONSIVE: Agar Bagus Saat Dibuka di HP */
+@media (max-width: 900px) {
+    body { padding: 10px; }
+    .hero-container { height: auto; padding: 15px; }
+    .nav-links, .search-btn { display: none; } /* Sembunyikan menu di HP */
+    .hero-content { flex-direction: column-reverse; padding: 20px 10px; text-align: center; gap: 40px; }
+    .hero-image-side { justify-content: center; }
+    .profile-frame { width: 260px; height: 320px; }
+    .hero-text-side h1 { font-size: 36px; }
+}

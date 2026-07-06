@@ -1,0 +1,226 @@
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url(univ.jpg); 
+    padding: 20px; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(10px); /* Menghilangkan double scroll pada browser Windows */
+}
+
+/* CONTAINER BACKGROUND UTAMA */
+.hero-container {
+    width: 100%;
+    max-width: 1280px; 
+    height: 92vh; 
+    position: relative;
+    border-radius: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('bg-pemandangan.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    overflow: hidden;
+}
+
+/* NAVBAR */
+.floating-navbar {
+    background-color: rgba(245, 247, 245, 0.95);
+    width: 100%;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 10;
+    margin-bottom: 25px;
+    flex-shrink: 0; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d5a27;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.nav-links a.active {
+    color: #2d5a27;
+}
+
+.cta-nav-btn {
+    background-color: #2d5a27;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.cta-nav-btn:hover {
+    background-color: #1e3d1a;
+}
+
+/* ======================================================
+   KARTU GLASSMORPHISM UTAMA
+   ====================================================== */
+.about-glass-card {
+    flex: 1;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08); 
+    backdrop-filter: blur(15px);                  
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    overflow: hidden; 
+}
+
+/* Blok Header Atas (Judul Terkunci Permanen) */
+.about-header-block {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.about-tag {
+    font-size: 13px;
+    font-weight: 700;
+    color: #a3c4bc;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.about-main-title {
+    font-size: 36px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+/* PEMBUNGKUS UTAMA (MENERAPKAN FLEX-ROW SEJAJAR) */
+.about-content-wrapper {
+    display: flex !important;
+    flex-direction: row !important; /* Memaksa teks dan foto berjajar ke samping */
+    align-items: center !important; 
+    justify-content: space-between !important;
+    gap: 50px;
+    flex: 1;
+    width: 100%;
+    overflow: hidden; 
+}
+
+/* Sisi Teks Kiri (Memiliki Fitur Scroll Internal Tipis) */
+.about-left-text-side {
+    flex: 1.4 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    overflow-y: auto; 
+    padding-right: 20px;
+}
+
+.about-left-text-side p {
+    font-size: 11px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: justify;
+}
+
+.about-left-text-side strong {
+    color: #a3c4bc;
+}
+
+/* Sisi Kanan Tempat Foto Berada */
+.about-right-image-side {
+    flex: 0.5 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; 
+}
+
+/* BINGKAI FOTO BULAT SEMPURNA SEPERTI REKOMENDASI PAS FOTO CV */
+.exact-square-box {
+    width: 250px !important;       /* Mengunci lebar box foto */
+    height: 250px !important;      /* Mengunci tinggi box foto */
+    aspect-ratio: 1 / 1 !important; 
+    border-radius: 50% !important; /* Membuat bingkai menjadi bulat sempurna agar lebih formal */
+    overflow: hidden !important;   /* Memotong gambar di luar lingkaran */
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+    display: block !important; 
+    flex-shrink: 0 !important; 
+    display: flex !important; 
+    align-items: center !important; 
+    justify-content: center !important; /* Memastikan box tampil di layar */
+}
+
+/* Mengatur Gambar di Dalam Box Agar Mengisi Penuh Elemen */
+.exact-square-box img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+     object-position: center 10% !important;/* Mengunci foto agar proporsional dan tidak gepeng */
+}
+
+/* DESAIN SCROLLBAR KHUSUS UNTUK AREA TEKS */
+.about-left-text-side::-webkit-scrollbar {
+    width: 5px;
+}
+.about-left-text-side::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+}
+.about-left-text-side::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+/* RESPONSIVE LAYOUT (JIKA JENDELA BROWSER DIKECILKAN / DIBUKA DI HP) */
+@media (max-width: 850px) {
+    .about-glass-card { overflow-y: auto; }
+    .about-content-wrapper { flex-direction: column-reverse !important; overflow: visible; gap: 30px; }
+    .about-left-text-side { overflow-y: visible; height: auto; padding-right: 0; }
+    .about-main-title, .about-tag { text-align: center; }
+    .exact-square-box { width: 240px !important; height: 240px !important; }
+    .about-left-text-side p { font-size: 14px; text-align: left; }
+}
