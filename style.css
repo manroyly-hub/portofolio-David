@@ -72,23 +72,13 @@ body {
 }
 
 .nav-links a.active, .nav-links a:hover {
-    color: #2d5a27;
+    color: #333;
 }
 
 .nav-actions {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.search-btn {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    color: #333;
-    padding-right: 15px;
-    border-right: 1px solid #ccc; /* Garis pembatas tipis di navbar */
 }
 
 .cta-nav-btn {
@@ -103,8 +93,24 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease;
 }
-
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px);}
+    to { opacity: 1; transform: translateX(0);}
+}
+.cta-nav-btn:hover {
+    background-color: #387031;
+    transform: translateY(-2px);
+    box-shadow: 0 5px rgba(45, 90, 39 0.3);
+}
+.cta-nav-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+    filter: brightness(0.9);
+}
 /* HERO CONTENT (Bagi Dua: Kiri & Kanan) */
 .hero-content {
     flex: 1;
@@ -161,11 +167,22 @@ body {
     font-weight: 600;
     backdrop-filter: blur(5px);
     transition: 0.3s ease;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px);}
+    to { opacity: 1; transform: translateX(0);}
 }
 
 .hero-btn:hover {
     background-color: white;
     color: #2d5a27;
+}
+.hero-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+    filter: brightness(0.9);
 }
 
 /* SISI KANAN: TEMPAT FOTO PROFIL UTAMA */
